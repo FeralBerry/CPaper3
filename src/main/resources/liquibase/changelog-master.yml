@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      changes:
+        - createTable:
+          tableName: notification_task
+          columns:
+            - column:
+                name: chatId
+                type: long
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: chatText
+                type: text
+                constraints:
+                  nullable: false
+            - column:
+                name: send_at
+                type: timestamp
+                constraints:
+                  nullable: false
