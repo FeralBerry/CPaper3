@@ -5,10 +5,15 @@ databaseChangeLog:
           tableName: notification_task
           columns:
             - column:
-                name: chatId
+                name: id
                 type: long
                 constraints:
                   primaryKey: true
+                  nullable: false
+            - column:
+                name: chatId
+                type: long
+                constraints:
                   nullable: false
             - column:
                 name: chatText
@@ -17,6 +22,35 @@ databaseChangeLog:
                   nullable: false
             - column:
                 name: send_at
+                type: timestamp
+                constraints:
+                  nullable: false
+        - createTable:
+          tableName: users
+          columns:
+            - column:
+                name: chatId
+                type: long
+                constraints:
+                  primaryKey: true
+                  nullable: false
+            - column:
+                name: firstName
+                type: varchar(50)
+                constraints:
+                  nullable: true
+            - column:
+                name: lastName
+                type: varchar(50)
+                constraints:
+                  nullable: true
+            - column:
+                name: userName
+                type: varchar(50)
+                constraints:
+                  nullable: false
+            - column:
+                name: registeredAt
                 type: timestamp
                 constraints:
                   nullable: false
